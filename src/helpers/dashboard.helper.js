@@ -5,13 +5,13 @@ export const generateCards = (products, users) => {
       quantity: products.count,
       color: "primary",
       title: "Total de productos",
-      icon: "fa-box",
+      icon: "fa-boxes",
       href: "/products"
     },
     {
       id: 2,
       quantity: users.count,
-      color: "secondary",
+      color: "warning",
       title: "Total de usuarios",
       icon: "fa-users",
       href: "/users"
@@ -22,7 +22,7 @@ export const generateCards = (products, users) => {
       color: "danger",
       title: "Total de categorias",
       icon: "fa-layer-group",
-      href: "/#categories"
+      href: "/categories"
     },
   ];
 };

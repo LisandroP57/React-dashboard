@@ -54,7 +54,7 @@ export const CategoriesChart = ({ countByCategory }) => {
             Cantidad de productos por categoria:
           </h5>
         </div>
-        <div className="card-body">
+        <div className="card-body" id="cardbody">
           <Pie data={data} />
         </div>
       </div>

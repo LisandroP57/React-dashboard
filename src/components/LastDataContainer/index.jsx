@@ -25,7 +25,7 @@ export const LastDataContainer = ({type, data}) => {
 			setInfoToDisplay({
 				title: "Último usuario agregado: ",
 				name: data.name,
-				imageUrl: data.avater,
+				imageUrl: data.avatar,
 				description: data.email
 			})
 		}
@@ -42,7 +42,7 @@ export const LastDataContainer = ({type, data}) => {
 						<h6>{name}</h6>
 					</div>
 					<div className="text-center">
-						<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "40rem"}} src={imageUrl} alt="Imagen" />
+					<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "40rem"}} src={`http://localhost:3000/images/products/${imageUrl}`} alt="Imagen" />
 					</div>
 					<p>{description}</p>
 				</div>

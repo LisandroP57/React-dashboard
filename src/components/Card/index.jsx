@@ -8,7 +8,9 @@ export const Card = ({ color, title, quantity, icon, href }) => {
         <div className="card-body">
           <div className="row no-gutters align-items-center">
             <div className="col mr-2">
-              <div className={`text-xs font-weight-bold text-${color} text-uppercase mb-1`}>
+              <div
+                className={`text-xs font-weight-bold text-${color} text-uppercase mb-1`}
+              >
                 {title}
               </div>
               <div className="h5 mb-0 font-weight-bold text-gray-800">
@@ -35,3 +37,4 @@ Card.propTypes = {
     icon: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
 }
+

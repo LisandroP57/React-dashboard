@@ -3,14 +3,14 @@ import { SidebarLogo } from "./components/Logo";
 import Logo from "../../assets/logo.png";
 import { NavItem } from "./components/NavItem";
 
-const TITLE = "Cuidate dashboard";
+const TITLE = "Dashboard Cuidate";
 
 export const Sidebar = () => {
   return (
     <>
       {/* <!-- Sidebar --> */}
       <ul
-        className="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion"
+        className="navbar-nav bg-gradient-violet sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
         {/* <!-- Sidebar - Brand --> */}
@@ -35,10 +35,10 @@ export const Sidebar = () => {
         {/* <!-- Nav Items --> */}
        
         <NavItem href="/" icon="fa-box" name="Productos"/>
-        <NavItem href="/" icon="fa-user" name="Usuarios"/>
-        <NavItem href="/" icon="fa-gear" name="Configuracion"/>
-        <NavItem href="/" icon="fa-calendar" name="Calendario"/>
-        <NavItem href="/" icon="fa-percent" name="Estadisticas"/>
+        <NavItem href="/users" icon="fa-user" name="Usuarios"/>
+        <NavItem href="/calendar" icon="fa-calendar" name="Calendario"/>
+        <NavItem href="/settings" icon="fa-gear" name="Configuracion"/>
+        <NavItem href="/#cardbody" icon="fa-percent" name="Estadisticas"/>
 
         {/* <!-- Divider --> */}
         <hr className="sidebar-divider d-none d-md-block" />
