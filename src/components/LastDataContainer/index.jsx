@@ -32,6 +32,16 @@ export const LastDataContainer = ({type, data}) => {
 		}
 	}, [data]);
 
+	const getImageUrl = () => {
+		if (type === "product") {
+		  return `http://localhost:3000/images/products/${imageUrl}`;
+		}
+		if (type === "user") {
+		  return `http://localhost:3000/images/avatar/${imageUrl}`;
+		}
+		return null;
+		};
+
     return (
         <div className="col-lg-6 mb-4">
 			<div className="card shadow mb-4">
@@ -43,9 +53,11 @@ export const LastDataContainer = ({type, data}) => {
 						<h6>{name}</h6>
 						<h6>{lastname}</h6>
 					</div>
+					{imageUrl && (
 					<div className="text-center">
-					<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "40rem"}} src={`http://localhost:3000/images/products/${imageUrl}`} alt="Imagen" />
+						<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "27rem" }} src={getImageUrl()} alt="Imagen" />
 					</div>
+					)}
 					<p>{description}</p>
 				</div>
 			</div>
