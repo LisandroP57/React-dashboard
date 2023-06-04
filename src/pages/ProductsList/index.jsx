@@ -15,8 +15,15 @@ const columns = [
     editable: true,
   },
   {
+    field: 'price',
+    headerName: 'Precio',
+    width: 150,
+    editable: true,
+    valueFormatter: (params) => `$${params.value.toLocaleString()}`,
+  },
+  {
     field: 'description',
-    headerName: 'Descripcion',
+    headerName: 'Descripción',
     width: 150,
     editable: true,
   },
@@ -76,4 +83,4 @@ export const ProductList = () => {
           </Box>
       </section>
     );
-  };
+};
