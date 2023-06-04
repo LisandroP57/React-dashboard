@@ -8,6 +8,7 @@ import { generateCards } from "../../helpers/dashboard.helper";
 import { Alert } from "../../components/Alert";
 import { ShowError } from "../../components/Error";
 import { CategoriesChart } from "../../components/CategoriesChart";
+import { LineChart } from "../../components/LineChart";
 
 export const Dashboard = () => {
   const [products, setProducts] = useState(null);
@@ -93,6 +94,7 @@ export const Dashboard = () => {
       </div>
       <div className="row">
             <CategoriesChart countByCategory={products?.countByCategory}/>
+            <LineChart />
       </div>
     </div>
   );

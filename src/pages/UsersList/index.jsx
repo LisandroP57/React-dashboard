@@ -15,8 +15,26 @@ const columns = [
     editable: true,
   },
   {
+    field: 'last_name',
+    headerName: 'Apellido',
+    width: 150,
+    editable: true,
+  },
+  {
     field: 'email',
     headerName: 'Email',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'phone',
+    headerName: 'Telefono',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'role',
+    headerName: 'Rol',
     width: 150,
     editable: true,
   },

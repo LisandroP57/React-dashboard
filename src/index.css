@@ -523,6 +523,7 @@ pre code {
   margin-right: -0.75rem;
   margin-left: -0.75rem;
 }
+
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -9273,6 +9274,12 @@ a:focus {
 }
 .sidebar .sidebar-brand .sidebar-brand-icon i {
   font-size: 2rem;
+}
+.sidebar .sidebar-brand .sidebar-brand-icon img {
+  transition: 1s;
+}
+.sidebar .sidebar-brand .sidebar-brand-icon img:hover {
+  transform: rotate(-360deg);
 }
 .sidebar .sidebar-brand .sidebar-brand-text {
   display: none;

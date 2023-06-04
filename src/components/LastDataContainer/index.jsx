@@ -7,7 +7,7 @@ export const LastDataContainer = ({type, data}) => {
 		imageUrl: "default.jpg",
 		description: "Una descripcion"
 	});
-	const {title, imageUrl, description, name} = infoToDisplay;
+	const {title, imageUrl, description, name, lastname} = infoToDisplay;
 
 	useEffect(() => {
 		if(!data) return;
@@ -25,6 +25,7 @@ export const LastDataContainer = ({type, data}) => {
 			setInfoToDisplay({
 				title: "Último usuario agregado: ",
 				name: data.name,
+				lastname:data.last_name,
 				imageUrl: data.avatar,
 				description: data.email
 			})
@@ -40,6 +41,7 @@ export const LastDataContainer = ({type, data}) => {
 				<div className="card-body">
 					<div >
 						<h6>{name}</h6>
+						<h6>{lastname}</h6>
 					</div>
 					<div className="text-center">
 					<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "40rem"}} src={`http://localhost:3000/images/products/${imageUrl}`} alt="Imagen" />
