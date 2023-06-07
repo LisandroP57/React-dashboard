@@ -83,11 +83,11 @@ export const UserList = () => {
                   initialState={{
                   pagination: {
                       paginationModel: {
-                      pageSize: 3,
+                      pageSize: 4,
                       },
                   },
                   }}
-                  pageSizeOptions={[3]}
+                  pageSizeOptions={[4]}
                   checkboxSelection
                   disableRowSelectionOnClick
               />
