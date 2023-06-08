@@ -10009,6 +10009,7 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
-.nav-item undefined {
-  
+.login-brand-icon {
+  display: flex;
+  justify-content: center;
 }
