@@ -146,6 +146,7 @@ sup {
 }
 a {
   color: #4e73df;
+  font-size: 14px;
   text-decoration: none;
   background-color: transparent;
 }
@@ -10012,4 +10013,15 @@ body.sidebar-toggled footer.sticky-footer {
 .login-brand-icon {
   display: flex;
   justify-content: center;
+}
+.btn-info {
+  background-color: #9977A6;
+  border-color: #724A81;
+}
+.btn-info:hover {
+  background-color: #724A81;
+  border-color: #9977A6;
+}
+.fa-solid {
+  color: rgba(0, 0, 0, 0.54);
 }

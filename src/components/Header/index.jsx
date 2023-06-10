@@ -3,8 +3,13 @@ import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
 import React  from 'react';
 import Clock from 'react-live-clock';
+import { useAuth } from "../../context/AuthProvider";
+import { Link } from "react-router-dom";
 
 export const Header = ({userName = "Admin Cuidate"}) => {
+  const { currentUser, logout } = useAuth();
+  const handleLogout = () => logout()
+  
   return (
     <>
       {/* <!-- Topbar --> */}
@@ -32,14 +37,32 @@ export const Header = ({userName = "Admin Cuidate"}) => {
           </li>
           <div className="topbar-divider d-none d-sm-block"></div>
           {/* <!-- Nav Item - User Information --> */}
-          <li className={`nav-item ${styles.avatarLogoContainer}`}>
-              <i
-                className={`fas fa-user ${styles.userLogo}`}
-              ></i>
-              <span className="text-gray-600 small text-center">
-                {userName}
-              </span>
-          </li>
+          {currentUser ? (
+            <>
+              <li className={`nav-item ${styles.avatarLogoContainer}`}>
+                <i className={`fas fa-user ${styles.userLogo}`}></i>
+                <span className="text-gray-600 small text-center">
+                  {currentUser.email}
+                </span>
+              </li>
+              <div className="topbar-divider d-none d-sm-block"></div>
+              <button className="btn btn-info" onClick={handleLogout}>
+                <i className="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </>
+          ) : (
+            <>
+              <li className={`nav-item ${styles.avatarLogoContainer}`}>
+              <i className="fa-solid fa-user"></i>
+                <Link to="/signin">Login</Link>
+              </li>
+              <div className="topbar-divider d-none d-sm-block"></div>
+              <li className={`nav-item ${styles.avatarLogoContainer}`}>
+              <i className="fa-solid fa-user-plus"></i>
+                <Link to="/signup">Registro</Link>
+              </li>
+            </>
+          )}
           <div className="topbar-divider d-none d-sm-block"></div>
         </ul>
       </nav>

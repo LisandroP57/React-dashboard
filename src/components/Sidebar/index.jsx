@@ -2,13 +2,16 @@ import { Link } from "react-router-dom";
 import { SidebarLogo } from "./components/Logo";
 import Logo from "../../assets/logo.png";
 import { NavItem } from "./components/NavItem";
+import { useAuth } from "../../context/AuthProvider";
 
 const TITLE = "Dashboard Cuidate";
 
 export const Sidebar = () => {
+  const { currentUser } = useAuth();
   return (
     <>
       {/* <!-- Sidebar --> */}
+      
       <ul
         className="navbar-nav bg-gradient-violet sidebar sidebar-dark accordion"
         id="accordionSidebar"
@@ -16,32 +19,36 @@ export const Sidebar = () => {
         {/* <!-- Sidebar - Brand --> */}
         <SidebarLogo brand="Cuidate!" logo={Logo} />        
         {/* <!-- Divider --> */}
-        <hr className="sidebar-divider my-0" />
+        {currentUser && (
+          <>
+            <hr className="sidebar-divider my-0" />
 
-        {/* <!-- Nav Item - Dashboard --> */}
-        <li className="nav-item active">
-          <a className="nav-link" href="/">
-            <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span>{TITLE}</span>
-          </a>
-        </li>
+            {/* <!-- Nav Item - Dashboard --> */}
+            <li className="nav-item active">
+              <a className="nav-link" href="/">
+                <i className="fas fa-fw fa-tachometer-alt"></i>
+                <span>{TITLE}</span>
+              </a>
+            </li>
 
-        {/* <!-- Divider --> */}
-        <hr className="sidebar-divider" />
+            {/* <!-- Divider --> */}
+            <hr className="sidebar-divider" />
 
-        {/* <!-- Heading --> */}
-        <div className="sidebar-heading">Administrar</div>
+            {/* <!-- Heading --> */}
+            <div className="sidebar-heading">Administrar</div>
 
-        {/* <!-- Nav Items --> */}
-       
-        <NavItem href="/" icon="fa-box" name="Productos"/>
-        <NavItem href="/users" icon="fa-user" name="Usuarios"/>
-        <NavItem href="/calendar" icon="fa-calendar" name="Calendario"/>
-        <NavItem href="/settings" icon="fa-gear" name="Configuracion"/>
-        <NavItem href="/#cardbody" icon="fa-percent" name="Estadisticas"/>
+            {/* <!-- Nav Items --> */}
+          
+            <NavItem href="/products" icon="fa-box" name="Productos"/>
+            <NavItem href="/users" icon="fa-user" name="Usuarios"/>
+            <NavItem href="/calendar" icon="fa-calendar" name="Calendario"/>
+            <NavItem href="/settings" icon="fa-gear" name="Configuracion"/>
+            <NavItem href="/#cardbody" icon="fa-percent" name="Estadisticas"/>
 
-        {/* <!-- Divider --> */}
-        <hr className="sidebar-divider d-none d-md-block" />
+            {/* <!-- Divider --> */}
+            <hr className="sidebar-divider d-none d-md-block" />
+          </>
+        )}
       </ul>
       {/* <!-- End of Sidebar --> */}
     </>

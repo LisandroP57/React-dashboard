@@ -11,25 +11,35 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Grafica lineal de',
+      text: 'Gráfica de ventas y visitas',
     },
   },
 };
 
+// Datos ficticios de ventas
 const labels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'];
+
+const generateRandomSalesData = () => {
+  const data = [];
+  for (let i = 0; i < labels.length; i++) {
+    const randomSale = Math.floor(Math.random() * 500);
+    data.push(randomSale);
+  }
+  return data;
+};
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Dataset 1',
-      data: [100, 200, 300, 400, 500, 600, 700],
+      label: 'Visitas a la página',
+      data: [500, 430, 350, 510, 370, 650, 600],
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
-      label: 'Dataset 2',
-      data: [200, 300, 400, 500, 600, 700, 800],
+      label: 'Ventas',
+      data: [200, 300, 200, 400, 257, 360, 720],
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },

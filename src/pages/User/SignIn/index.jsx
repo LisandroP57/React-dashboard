@@ -9,23 +9,27 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Copyright } from "../../../components/Copyright";
-import { Formik } from "formik";
-import { Link } from "react-router-dom";
-import { loginUser } from "../../../services/users.service";
 import Logo from "../../../assets/logo.png";
 import { LoginLogo } from "../Logo";
+
+import { Formik } from "formik";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/AuthProvider";
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+  const { currentUser, login } = useAuth();
+  const navigate = useNavigate();
+  if(currentUser) return navigate("/");
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 4,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -63,18 +67,7 @@ export default function SignIn() {
               }
             }
             onSubmit={(values, { setSubmitting }) => {
-              loginUser(values)
-                .then((res) => {
-                  if (res.ok) {
-                    return res.json();
-                  } else {
-                    return Promise.reject(res);
-                  }
-                })
-                .then(({ token }) =>
-                  window.localStorage.setItem("_token", token)
-                )
-                .catch((error) => alert(JSON.stringify(error)));
+              login(values)
 
               setSubmitting(false);
             }}
@@ -139,7 +132,6 @@ export default function SignIn() {
         }
           </Formik>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
