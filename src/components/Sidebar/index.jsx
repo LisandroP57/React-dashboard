@@ -42,9 +42,6 @@ export const Sidebar = () => {
             <NavItem href="/products" icon="fa-box" name="Productos"/>
             <NavItem href="/users" icon="fa-user" name="Usuarios"/>
             <NavItem href="/calendar" icon="fa-calendar" name="Calendario"/>
-            <NavItem href="/settings" icon="fa-gear" name="Configuracion"/>
-            <NavItem href="/#cardbody" icon="fa-percent" name="Estadisticas"/>
-
             {/* <!-- Divider --> */}
             <hr className="sidebar-divider d-none d-md-block" />
           </>

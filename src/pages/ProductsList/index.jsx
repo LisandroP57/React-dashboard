@@ -72,11 +72,11 @@ export const ProductList = () => {
                   initialState={{
                   pagination: {
                       paginationModel: {
-                      pageSize: 7,
+                      pageSize: 10,
                       },
                   },
                   }}
-                  pageSizeOptions={[7]}
+                  pageSizeOptions={[10]}
                   checkboxSelection
                   disableRowSelectionOnClick
               />
