@@ -11,7 +11,7 @@ export const Layout = ({children}) => {
         <Header />
         <div id="content">{children}</div>
 
-        <Footer autor={"Cuidate"}/>
+        <Footer autor={"Lisandro Palavecino 2023"}/>
       </div>
     </div>
   );
@@ -20,4 +20,3 @@ export const Layout = ({children}) => {
 Layout.propTypes = { 
   children: PropTypes.object.isRequired,
 }
-

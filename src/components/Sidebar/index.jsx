@@ -4,7 +4,7 @@ import Logo from "../../assets/logo.png";
 import { NavItem } from "./components/NavItem";
 import { useAuth } from "../../context/AuthProvider";
 
-const TITLE = "Dashboard Cuidate";
+const TITLE = "Dashboard EcommuniCrafts";
 
 export const Sidebar = () => {
   const { currentUser } = useAuth();
@@ -13,11 +13,11 @@ export const Sidebar = () => {
       {/* <!-- Sidebar --> */}
       
       <ul
-        className="navbar-nav bg-gradient-violet sidebar sidebar-dark accordion"
+        className="navbar-nav bg-gradient-blue sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
         {/* <!-- Sidebar - Brand --> */}
-        <SidebarLogo brand="Cuidate!" logo={Logo} />        
+        <SidebarLogo brand="E-communiCrafts!" logo={Logo} />        
         {/* <!-- Divider --> */}
         {currentUser && (
           <>

@@ -5701,8 +5701,8 @@ button.bg-light:focus,
 button.bg-light:hover {
   background-color: #d4daed !important;
 }
-.bg-violet {
-  background-color: #724A81 !important;
+.bg-blue {
+  background-color: #0096FF !important;
 }
 .bg-dark {
   background-color: #4e73df !important;
@@ -8813,9 +8813,9 @@ a:focus {
     opacity: 1;
   }
 }
-.bg-gradient-violet {
+.bg-gradient-blue {
   background-color: #724A81;
-  background-image: linear-gradient(180deg, #724A81 10%, #9977A6 100%);
+  background-image: linear-gradient(180deg, #0096FF 10%, #0047AB 100%);
   background-size: cover;
 }
 .bg-gradient-dark {
@@ -10015,15 +10015,12 @@ body.sidebar-toggled footer.sticky-footer {
   justify-content: center;
 }
 .btn-info {
-  background-color: #9977A6;
-  border-color: #724A81;
+  background-color: #0096FF;
+  border-color: #0047AB;
 }
 .btn-info:hover {
-  background-color: #724A81;
-  border-color: #9977A6;
-}
-.fa-solid {
-  color: rgba(0, 0, 0, 0.54);
+  background-color: #0047AB;
+  border-color: #0096FF;
 }
 .css-cwhad8-MuiDateCalendar-root {
   width: 500px;

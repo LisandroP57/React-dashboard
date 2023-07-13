@@ -72,7 +72,7 @@ export const Dashboard = () => {
       {alert.show && <Alert alert={alert} setAlert={setAlert} />}
 
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 className="h3 mb-0 text-gray-800">Cuidate Panel de administrador</h1>
+        <h1 className="h3 mb-0 text-gray-800">E-communiCrafts Panel de administrador</h1>
       </div>
 
       <div className="row">
